@@ -29,7 +29,7 @@ const blogs = [
 export default function BlogsSection() {
 	return (
 		<section className='w-full py-24 bg-white'>
-			<div className='max-w-7xl mx-auto px-6'>
+			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-12'>
 				{/* Heading */}
 				<div className='text-center mb-12'>
 					<span className='text-sm font-semibold bg-blue-50 text-blue-600 px-4 py-1.5 rounded-full'>

@@ -3,17 +3,14 @@ import React from 'react'
 const AboutSection = () => {
 	return (
 		<div>
-			{/* About Us Section */}
 			<section
 				id='about'
-				className='relative py-24 lg:py-32 px-6 bg-linear-to-br from-slate-50 via-white to-blue-50 overflow-hidden'>
-				{/* Background Decorations */}
+				className='relative py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 bg-linear-to-br from-slate-50 via-white to-blue-50 overflow-hidden'>
 				<div className='absolute top-0 right-0 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse'></div>
 				<div className='absolute bottom-0 left-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse'></div>
 
 				<div className='max-w-7xl mx-auto relative z-10'>
-					{/* Section Header */}
-					<div className='text-center max-w-3xl mx-auto mb-16 lg:mb-20'>
+					<div className='text-center max-w-3xl mx-auto mb-12 md:mb-16 lg:mb-20'>
 						<div className='inline-flex items-center space-x-2 px-4 py-2 bg-cyan-50 border border-cyan-200 rounded-full mb-6'>
 							<svg
 								className='w-4 h-4 text-cyan-600'
@@ -25,22 +22,19 @@ const AboutSection = () => {
 								ABOUT US
 							</span>
 						</div>
-						<h2 className='text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-6 leading-tight'>
+						<h2 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-6 leading-tight'>
 							Empowering Businesses in the{' '}
 							<span className='bg-linear-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent'>
 								Digital Age
 							</span>
 						</h2>
-						<p className='text-xl text-slate-600 leading-relaxed'>
+						<p className='text-lg md:text-xl text-slate-600 leading-relaxed'>
 							We are a team of passionate digital strategists, creators, and
 							innovators dedicated to transforming your online presence into a
 							powerful growth engine.
 						</p>
 					</div>
-
-					{/* Main Content Grid */}
-					<div className='grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20'>
-						{/* Left - Image/Visual */}
+					<div className='grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-12 md:mb-20'>
 						<div className='relative order-2 lg:order-1'>
 							<div className='relative rounded-2xl overflow-hidden shadow-2xl'>
 								<img
@@ -51,8 +45,7 @@ const AboutSection = () => {
 								<div className='absolute inset-0 bg-linear-to-tr from-cyan-600/30 to-blue-600/30'></div>
 							</div>
 
-							{/* Floating Stats Card */}
-							<div className='absolute -bottom-8 -right-8 bg-white p-6 rounded-2xl shadow-2xl border border-slate-100 hidden lg:block'>
+							<div className='absolute -bottom-8 -right-8 bg-white p-6 rounded-2xl shadow-2xl border border-slate-100 hidden md:block'>
 								<div className='flex items-center space-x-4'>
 									<div className='p-3 bg-linear-to-br from-cyan-500 to-blue-600 rounded-xl'>
 										<svg
@@ -78,28 +71,25 @@ const AboutSection = () => {
 							</div>
 						</div>
 
-						{/* Right - Content */}
 						<div className='space-y-8 order-1 lg:order-2'>
 							<div className='space-y-6'>
-								<h3 className='text-2xl lg:text-3xl font-bold text-slate-900'>
+								<h3 className='text-xl md:text-2xl lg:text-3xl font-bold text-slate-900'>
 									Your Success is Our Mission
 								</h3>
-								<p className='text-lg text-slate-600 leading-relaxed'>
+								<p className='text-base md:text-lg text-slate-600 leading-relaxed'>
 									At Digital Haridwar, we believe every business deserves a
 									strong digital presence. Since our inception, we've helped
 									over 150+ brands amplify their voice, reach their audience,
 									and achieve measurable growth through strategic digital
 									solutions.
 								</p>
-								<p className='text-lg text-slate-600 leading-relaxed'>
+								<p className='text-base md:text-lg text-slate-600 leading-relaxed'>
 									Our approach combines data-driven strategies with creative
 									excellence, ensuring that every campaign, every piece of
 									content, and every optimization effort delivers real, tangible
 									results for your business.
 								</p>
 							</div>
-
-							{/* Key Points */}
 							<div className='space-y-4'>
 								<div className='flex items-start space-x-4 p-4 bg-white rounded-xl border border-slate-200 hover:border-cyan-400 hover:shadow-lg transition-all duration-300'>
 									<div className='shrink-0 w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center'>
@@ -182,28 +172,27 @@ const AboutSection = () => {
 						</div>
 					</div>
 
-					{/* Stats Section */}
-					<div className='grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12'>
+					<div className='hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-12'>
 						<div className='text-center p-6 bg-white rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl hover:scale-105 transition-all duration-300'>
-							<div className='text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2'>
+							<div className='text-3xl md:text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2'>
 								150+
 							</div>
 							<div className='text-slate-600 font-medium'>Happy Clients</div>
 						</div>
 						<div className='text-center p-6 bg-white rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl hover:scale-105 transition-all duration-300'>
-							<div className='text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2'>
+							<div className='text-3xl md:text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2'>
 								500+
 							</div>
 							<div className='text-slate-600 font-medium'>Projects Done</div>
 						</div>
 						<div className='text-center p-6 bg-white rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl hover:scale-105 transition-all duration-300'>
-							<div className='text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2'>
+							<div className='text-3xl md:text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2'>
 								98%
 							</div>
 							<div className='text-slate-600 font-medium'>Success Rate</div>
 						</div>
 						<div className='text-center p-6 bg-white rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl hover:scale-105 transition-all duration-300'>
-							<div className='text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2'>
+							<div className='text-3xl md:text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2'>
 								24/7
 							</div>
 							<div className='text-slate-600 font-medium'>Support</div>

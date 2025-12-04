@@ -12,10 +12,10 @@ import {
 const Hero = () => {
 	return (
 		<div>
-			<section className='mt-28 pt-12 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden'>
+			<section className='mt-20 md:mt-28 pt-8 md:pt-12 pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden'>
 				<div className='max-w-7xl mx-auto'>
-					<div className='grid lg:grid-cols-2 gap-12 items-center'>
-						<div className='space-y-8 order-2 lg:order-1'>
+					<div className='grid lg:grid-cols-2 gap-8 md:gap-12 items-center'>
+						<div className='space-y-8 order-1'>
 							<div className='inline-flex items-center space-x-2 px-4 py-2 bg-linear-to-r from-blue-50 to-cyan-50 rounded-full border border-blue-200 shadow-sm'>
 								<Sparkles
 									className='text-blue-600'
@@ -26,51 +26,51 @@ const Hero = () => {
 								</span>
 							</div>
 
-							<h1 className='text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 leading-tight'>
+							<h1 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight'>
 								Transform Your
 								<span className='block mt-2 bg-linear-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent animate-linear'>
 									Digital Presence
 								</span>
 							</h1>
 
-							<p className='text-xl text-slate-600 leading-relaxed'>
+							<p className='text-lg md:text-xl text-slate-600 leading-relaxed'>
 								Elevate your brand with our comprehensive digital services. From
 								strategic content marketing to advanced SEO solutions, we help
 								businesses thrive in the digital landscape.
 							</p>
 
 							<div className='flex flex-col sm:flex-row gap-4'>
-								<button className='group px-8 py-4 bg-linear-to-r from-blue-600 to-cyan-500 text-white rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 font-semibold flex items-center justify-center space-x-2'>
+								<button className='group px-6 py-3 sm:px-8 sm:py-4 bg-linear-to-r from-blue-600 to-cyan-500 text-white rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 font-semibold flex items-center justify-center space-x-2'>
 									<span>Explore Services</span>
 									<ChevronRight
 										size={20}
 										className='group-hover:translate-x-1 transition-transform'
 									/>
 								</button>
-								<button className='px-8 py-4 bg-white text-slate-700 rounded-xl border-2 border-slate-200 hover:border-blue-500 hover:text-blue-600 hover:shadow-lg transition-all duration-300 font-semibold'>
+								<button className='px-6 py-3 sm:px-8 sm:py-4 bg-white text-slate-700 rounded-xl border-2 border-slate-200 hover:border-blue-500 hover:text-blue-600 hover:shadow-lg transition-all duration-300 font-semibold'>
 									Contact Us
 								</button>
 							</div>
 
 							<div className='grid grid-cols-3 gap-6 pt-8'>
-								<div className='text-center lg:text-left'>
-									<div className='text-4xl font-bold bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent'>
+								<div className='text-center md:text-left'>
+									<div className='text-2xl md:text-3xl lg:text-4xl font-bold bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent'>
 										150+
 									</div>
 									<div className='text-sm text-slate-600 mt-1 font-medium'>
 										Happy Clients
 									</div>
 								</div>
-								<div className='text-center lg:text-left'>
-									<div className='text-4xl font-bold bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent'>
+								<div className='text-center md:text-left'>
+									<div className='text-2xl md:text-3xl lg:text-4xl font-bold bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent'>
 										98%
 									</div>
 									<div className='text-sm text-slate-600 mt-1 font-medium'>
 										Success Rate
 									</div>
 								</div>
-								<div className='text-center lg:text-left'>
-									<div className='text-4xl font-bold bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent'>
+								<div className='text-center md:text-left'>
+									<div className='text-2xl md:text-3xl lg:text-4xl font-bold bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent'>
 										24/7
 									</div>
 									<div className='text-sm text-slate-600 mt-1 font-medium'>
@@ -80,7 +80,7 @@ const Hero = () => {
 							</div>
 						</div>
 
-						<div className='relative order-1 lg:order-2'>
+						<div className='relative order-2'>
 							<div className='relative z-10 mb-8 lg:mb-0'>
 								<div className='relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500'>
 									<img
@@ -91,7 +91,7 @@ const Hero = () => {
 									<div className='absolute inset-0 bg-linear-to-tr from-blue-600/20 to-cyan-500/20'></div>
 								</div>
 
-								<div className='absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden lg:block animate-float'>
+								<div className='absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden md:block animate-float'>
 									<div className='flex items-center space-x-3'>
 										<div className='p-2 bg-green-100 rounded-lg'>
 											<TrendingUp
@@ -110,7 +110,7 @@ const Hero = () => {
 									</div>
 								</div>
 
-								<div className='absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden lg:block animate-float-delay'>
+								<div className='absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden md:block animate-float-delay'>
 									<div className='flex items-center space-x-3'>
 										<div className='p-2 bg-blue-100 rounded-lg'>
 											<Award
@@ -130,7 +130,7 @@ const Hero = () => {
 								</div>
 							</div>
 
-							<div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8'>
+							<div className='hidden lg:grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8'>
 								<div className='bg-white p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 group cursor-pointer'>
 									<div className='p-3 bg-blue-100 rounded-xl w-fit mb-3 group-hover:scale-110 transition-transform'>
 										<Target
