@@ -12,7 +12,7 @@ import {
 const Hero = () => {
 	return (
 		<div>
-			<section className='mt-20 md:mt-28 pt-8 md:pt-12 pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden'>
+			<section className='mt-24 md:mt-28 pt-8 md:pt-12 pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden'>
 				<div className='max-w-7xl mx-auto'>
 					<div className='grid lg:grid-cols-2 gap-8 md:gap-12 items-center'>
 						<div className='space-y-8 order-1'>
