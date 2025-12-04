@@ -19,7 +19,7 @@ export default function Navbar() {
 	return (
 		<nav
 			className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-xl shadow-lg border-b border-blue-100`}>
-			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-2 flex justify-between items-center'>
+			<div className='max-w-7xl mx-auto px-4 pr-7 md:pr-0 sm:px-6 lg:px-12 py-3 flex justify-between items-center'>
 				{/* Logo */}
 				<Link
 					href='/'
