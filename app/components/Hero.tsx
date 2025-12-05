@@ -8,6 +8,7 @@ import {
 	TrendingUp,
 	Target,
 } from 'lucide-react'
+import Link from 'next/link'
 
 const Hero = () => {
 	return (
@@ -40,19 +41,23 @@ const Hero = () => {
 							</p>
 
 							<div className='flex flex-col sm:flex-row gap-4'>
-								<button className='group px-6 py-3 sm:px-8 sm:py-4 bg-linear-to-r from-blue-600 to-cyan-500 text-white rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 font-semibold flex items-center justify-center space-x-2'>
-									<span>Explore Services</span>
-									<ChevronRight
-										size={20}
-										className='group-hover:translate-x-1 transition-transform'
-									/>
-								</button>
-								<button className='px-6 py-3 sm:px-8 sm:py-4 bg-white text-slate-700 rounded-xl border-2 border-slate-200 hover:border-blue-500 hover:text-blue-600 hover:shadow-lg transition-all duration-300 font-semibold'>
-									Contact Us
-								</button>
+								<Link href='/services'>
+									<button className='group px-6 py-3 sm:px-8 sm:py-4 bg-linear-to-r from-blue-600 to-cyan-500 text-white rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 font-semibold flex items-center justify-center space-x-2'>
+										<span>Explore Services</span>
+										<ChevronRight
+											size={20}
+											className='group-hover:translate-x-1 transition-transform'
+										/>
+									</button>
+								</Link>
+								<Link href='/contact'>
+									<button className='px-6 py-3 sm:px-8 sm:py-4 bg-white text-slate-700 rounded-xl border-2 border-slate-200 hover:border-blue-500 hover:text-blue-600 hover:shadow-lg transition-all duration-300 font-semibold'>
+										Contact Us
+									</button>
+								</Link>
 							</div>
 
-							<div className='grid grid-cols-3 gap-6 pt-8'>
+							{/* <div className='grid grid-cols-3 gap-6 pt-8'>
 								<div className='text-center md:text-left'>
 									<div className='text-2xl md:text-3xl lg:text-4xl font-bold bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent'>
 										150+
@@ -77,7 +82,7 @@ const Hero = () => {
 										Support
 									</div>
 								</div>
-							</div>
+							</div> */}
 						</div>
 
 						<div className='relative order-2'>
