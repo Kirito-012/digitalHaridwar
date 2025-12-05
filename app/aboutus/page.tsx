@@ -86,7 +86,7 @@ export default function AboutUsPage() {
 			</section>
 
 			{/* Our Team Section */}
-			<section className='py-16 px-4 sm:px-6 lg:px-20 bg-slate-50'>
+			{/* <section className='py-16 px-4 sm:px-6 lg:px-20 bg-slate-50'>
 				<div className='max-w-7xl mx-auto'>
 					<motion.div
 						initial={{opacity: 0, y: 30}}
@@ -105,19 +105,19 @@ export default function AboutUsPage() {
 					<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
 						{[
 							{
-								name: 'Alex Johnson',
+								name: 'Aryan Chauhan',
 								role: 'CEO & Founder',
 								image:
-									'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop',
+									'',
 							},
 							{
-								name: 'Sarah Chen',
+								name: 'Aarav Agarwal',
 								role: 'Head of Marketing',
 								image:
 									'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop',
 							},
 							{
-								name: 'Mike Rodriguez',
+								name: 'Palak Singh',
 								role: 'Lead Developer',
 								image:
 									'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop',
@@ -145,7 +145,7 @@ export default function AboutUsPage() {
 						))}
 					</div>
 				</div>
-			</section>
+			</section> */}
 
 			{/* Our Values Section */}
 			<section className='py-16 px-4 sm:px-6 lg:px-20'>
