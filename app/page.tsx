@@ -5,6 +5,7 @@ import WhyWeDifferSection from './components/WhyWeDifferSection'
 import ServicesSection from './components/ServicesSection'
 import BlogsSection from './components/BlogsSection'
 import Footer from './components/Footer'
+import FAQSection from './components/FAQSection'
 
 export default function Home() {
 	return (
@@ -15,6 +16,7 @@ export default function Home() {
 			<WhyWeDifferSection />
 			<ServicesSection />
 			<BlogsSection />
+			<FAQSection />
 			<Footer />
 		</>
 	)

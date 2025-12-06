@@ -1,19 +1,52 @@
-import React from 'react'
-import {
-	Award,
-	Zap,
-	Users,
-	ChevronRight,
-	Sparkles,
-	TrendingUp,
-	Target,
-} from 'lucide-react'
+'use client'
+import React, { useState } from 'react'
+import {ChevronRight, Sparkles} from 'lucide-react'
 import Link from 'next/link'
 
 const Hero = () => {
+	const [formData, setFormData] = useState({
+		name: '',
+		number: '',
+		email: '',
+		message: '',
+	})
+	const [loading, setLoading] = useState(false)
+	const [submitMessage, setSubmitMessage] = useState('')
+
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { name, value } = e.target
+		setFormData(prev => ({ ...prev, [name]: value }))
+	}
+
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault()
+		setLoading(true)
+		setSubmitMessage('')
+
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			})
+
+			if (response.ok) {
+				setSubmitMessage('Thank you! Your message has been sent successfully.')
+				setFormData({ name: '', number: '', email: '', message: '' })
+			} else {
+				setSubmitMessage('Sorry, there was an error sending your message. Please try again.')
+			}
+		} catch (error) {
+			setSubmitMessage('Sorry, there was an error sending your message. Please try again.')
+		} finally {
+			setLoading(false)
+		}
+	}
 	return (
 		<div>
-			<section className='mt-24 md:mt-28 pt-8 md:pt-12 pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden'>
+			<section className='mt-24 md:mt-40 pt-8 md:pt-12 pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden'>
 				<div className='max-w-7xl mx-auto'>
 					<div className='grid lg:grid-cols-2 gap-8 md:gap-12 items-center'>
 						<div className='space-y-8 order-1'>
@@ -86,107 +119,94 @@ const Hero = () => {
 						</div>
 
 						<div className='relative order-2'>
-							<div className='relative z-10 mb-8 lg:mb-0'>
-								<div className='relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500'>
-									<img
-										src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'
-										alt='Digital Marketing Dashboard'
-										className='w-full h-auto object-cover'
-									/>
-									<div className='absolute inset-0 bg-linear-to-tr from-blue-600/20 to-cyan-500/20'></div>
-								</div>
-
-								<div className='absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden md:block animate-float'>
-									<div className='flex items-center space-x-3'>
-										<div className='p-2 bg-green-100 rounded-lg'>
-											<TrendingUp
-												className='text-green-600'
-												size={20}
-											/>
-										</div>
-										<div>
-											<div className='text-xs text-slate-500'>
-												Traffic Growth
-											</div>
-											<div className='text-lg font-bold text-slate-900'>
-												+245%
-											</div>
-										</div>
+							<div className='bg-white p-8 rounded-3xl shadow-2xl border border-slate-100'>
+								<h3 className='text-2xl font-bold text-slate-900 mb-6 text-center'>
+									Get Your Free Consultation
+								</h3>
+								{submitMessage && (
+									<div className={`mb-4 p-3 rounded-xl text-center text-sm font-medium ${
+										submitMessage.includes('Thank you')
+											? 'bg-green-100 text-green-800'
+											: 'bg-red-100 text-red-800'
+									}`}>
+										{submitMessage}
 									</div>
-								</div>
-
-								<div className='absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden md:block animate-float-delay'>
-									<div className='flex items-center space-x-3'>
-										<div className='p-2 bg-blue-100 rounded-lg'>
-											<Award
-												className='text-blue-600'
-												size={20}
-											/>
-										</div>
-										<div>
-											<div className='text-xs text-slate-500'>
-												Client Rating
-											</div>
-											<div className='text-lg font-bold text-slate-900'>
-												4.9/5.0
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div className='hidden lg:grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8'>
-								<div className='bg-white p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 group cursor-pointer'>
-									<div className='p-3 bg-blue-100 rounded-xl w-fit mb-3 group-hover:scale-110 transition-transform'>
-										<Target
-											className='text-blue-600'
-											size={24}
+								)}
+								<form onSubmit={handleSubmit} className='space-y-4'>
+									<div>
+										<label
+											htmlFor='name'
+											className='block text-sm font-medium text-slate-700 mb-1'>
+											Your Name
+										</label>
+										<input
+											type='text'
+											id='name'
+											name='name'
+											value={formData.name}
+											onChange={handleInputChange}
+											className='w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors'
+											placeholder='Enter your full name'
+											required
 										/>
 									</div>
-									<h3 className='text-base font-semibold text-slate-900 mb-1'>
-										SEO Mastery
-									</h3>
-									<p className='text-sm text-slate-600'>Drive organic growth</p>
-								</div>
-
-								<div className='bg-linear-to-br from-blue-600 to-cyan-500 p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer transform hover:scale-105'>
-									<div className='p-3 bg-white/20 backdrop-blur-sm rounded-xl w-fit mb-3'>
-										<Zap
-											className='text-white'
-											size={24}
+									<div>
+										<label
+											htmlFor='number'
+											className='block text-sm font-medium text-slate-700 mb-1'>
+											Your Number
+										</label>
+										<input
+											type='tel'
+											id='number'
+											name='number'
+											value={formData.number}
+											onChange={handleInputChange}
+											className='w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors'
+											placeholder='Enter your phone number'
+											required
 										/>
 									</div>
-									<h3 className='text-base font-semibold text-white mb-1'>
-										Fast Results
-									</h3>
-									<p className='text-sm text-blue-50'>Quick turnaround</p>
-								</div>
-
-								<div className='bg-linear-to-br from-cyan-500 to-blue-600 p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer transform hover:scale-105'>
-									<div className='p-3 bg-white/20 backdrop-blur-sm rounded-xl w-fit mb-3'>
-										<Sparkles
-											className='text-white'
-											size={24}
+									<div>
+										<label
+											htmlFor='email'
+											className='block text-sm font-medium text-slate-700 mb-1'>
+											Your Email
+										</label>
+										<input
+											type='email'
+											id='email'
+											name='email'
+											value={formData.email}
+											onChange={handleInputChange}
+											className='w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors'
+											placeholder='Enter your email address'
+											required
 										/>
 									</div>
-									<h3 className='text-base font-semibold text-white mb-1'>
-										Content Strategy
-									</h3>
-									<p className='text-sm text-cyan-50'>Engaging narratives</p>
-								</div>
-
-								<div className='bg-white p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 group cursor-pointer'>
-									<div className='p-3 bg-cyan-100 rounded-xl w-fit mb-3 group-hover:scale-110 transition-transform'>
-										<Users
-											className='text-cyan-600'
-											size={24}
-										/>
+									<div>
+										<label
+											htmlFor='message'
+											className='block text-sm font-medium text-slate-700 mb-1'>
+											Message
+										</label>
+										<textarea
+											id='message'
+											name='message'
+											rows={4}
+											value={formData.message}
+											onChange={handleInputChange}
+											className='w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none'
+											placeholder='Tell us about your project or requirements'
+											required></textarea>
 									</div>
-									<h3 className='text-base font-semibold text-slate-900 mb-1'>
-										Expert Team
-									</h3>
-									<p className='text-sm text-slate-600'>Dedicated support</p>
-								</div>
+									<button
+										type='submit'
+										disabled={loading}
+										className='w-full py-3 px-6 bg-linear-to-r from-blue-600 to-cyan-500 text-white rounded-xl hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 font-semibold disabled:opacity-50 disabled:cursor-not-allowed'>
+										{loading ? 'Submitting...' : 'Submit'}
+									</button>
+								</form>
 							</div>
 
 							<div className='absolute -z-10 top-1/4 -right-12 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse'></div>

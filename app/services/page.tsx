@@ -197,6 +197,9 @@ export default function ServicesPage() {
 								<h3 className='text-xl font-bold text-slate-900 mb-3'>
 									{service.title}
 								</h3>
+								<div className='text-sm font-semibold text-blue-600 mb-2 bg-blue-50 px-3 py-1 rounded-full inline-block'>
+									2026 coming soon
+								</div>
 								<p className='text-slate-600 mb-4 leading-relaxed'>
 									{service.description}
 								</p>
@@ -249,6 +252,9 @@ export default function ServicesPage() {
 								<h3 className='text-xl font-bold text-slate-900 mb-3'>
 									{service.title}
 								</h3>
+								<div className='text-sm font-semibold text-blue-600 mb-2 bg-blue-50 px-3 py-1 rounded-full inline-block'>
+									2026 coming soon
+								</div>
 								<p className='text-slate-600 mb-4 leading-relaxed'>
 									{service.description}
 								</p>
