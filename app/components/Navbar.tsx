@@ -127,7 +127,11 @@ export default function Navbar() {
 						{['Home', 'About Us', 'Services', 'Blogs', 'Contact Us'].map(
 							(item) => {
 								const href = `/${
-									item === 'Home' ? '' : item.toLowerCase().replace(' ', '')
+									item === 'Home'
+										? ''
+										: item === 'Contact Us'
+										? 'contact'
+										: item.toLowerCase().replace(' ', '')
 								}`
 								const isActive =
 									(href === '/' && pathname === '/') ||
