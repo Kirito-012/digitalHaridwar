@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import {motion} from 'framer-motion'
@@ -12,31 +13,39 @@ import {
 	Layers,
 	ShieldCheck,
 } from 'lucide-react'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-	title: 'About Us - Digital Haridwar | Leading Digital Marketing Agency',
-	description: 'Learn about Digital Haridwar, your trusted digital marketing partner in Haridwar. We specialize in SEO, social media marketing, web design, and digital transformation services.',
-	keywords: [
-		'Digital Marketing Agency Haridwar',
-		'About Digital Haridwar',
-		'Digital Agency Team',
-		'Marketing Experts Haridwar',
-		'Professional Digital Services',
-	],
-	openGraph: {
-		title: 'About Us - Digital Haridwar',
-		description: 'Learn about Digital Haridwar, your trusted digital marketing partner in Haridwar.',
-		url: 'https://www.digitalharidwar.com/aboutus',
-	},
-	alternates: {
-		canonical: 'https://www.digitalharidwar.com/aboutus',
-	},
-}
 
 export default function AboutUsPage() {
 	return (
 		<div className='min-h-screen bg-white'>
+			<Head>
+				<title>
+					About Us - Digital Haridwar | Leading Digital Marketing Agency
+				</title>
+				<meta
+					name='description'
+					content='Learn about Digital Haridwar, your trusted digital marketing partner in Haridwar. We specialize in SEO, social media marketing, web design, and digital transformation services.'
+				/>
+				<meta
+					name='keywords'
+					content='Digital Marketing Agency Haridwar, About Digital Haridwar, Digital Agency Team, Marketing Experts Haridwar, Professional Digital Services'
+				/>
+				<meta
+					property='og:title'
+					content='About Us - Digital Haridwar'
+				/>
+				<meta
+					property='og:description'
+					content='Learn about Digital Haridwar, your trusted digital marketing partner in Haridwar.'
+				/>
+				<meta
+					property='og:url'
+					content='https://www.digitalharidwar.com/aboutus'
+				/>
+				<link
+					rel='canonical'
+					href='https://www.digitalharidwar.com/aboutus'
+				/>
+			</Head>
 			<Navbar />
 
 			{/* Hero Section */}

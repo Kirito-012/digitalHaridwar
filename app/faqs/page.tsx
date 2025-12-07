@@ -1,31 +1,11 @@
 'use client'
 import {useState} from 'react'
+import Head from 'next/head'
 import {motion, AnimatePresence} from 'framer-motion'
 import {ChevronDown} from 'lucide-react'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-	title: 'FAQs - Digital Marketing Questions Answered | Digital Haridwar',
-	description: 'Find answers to frequently asked questions about our digital marketing services, SEO, social media marketing, web design, and more at Digital Haridwar.',
-	keywords: [
-		'Digital Marketing FAQs',
-		'SEO Questions',
-		'Social Media Marketing FAQ',
-		'Web Design Questions',
-		'Digital Agency FAQ',
-	],
-	openGraph: {
-		title: 'FAQs - Digital Haridwar',
-		description: 'Find answers to frequently asked questions about our digital marketing services.',
-		url: 'https://www.digitalharidwar.com/faqs',
-	},
-	alternates: {
-		canonical: 'https://www.digitalharidwar.com/faqs',
-	},
-}
 
 const faqs = [
 	{
@@ -67,7 +47,23 @@ export default function FAQsPage() {
 
 	return (
 		<>
-			<head>
+			<Head>
+				<title>FAQs - Digital Marketing Questions Answered | Digital Haridwar</title>
+				<meta
+					name='description'
+					content='Find answers to frequently asked questions about our digital marketing services, SEO, social media marketing, web design, and more at Digital Haridwar.'
+				/>
+				<meta
+					name='keywords'
+					content='Digital Marketing FAQs, SEO Questions, Social Media Marketing FAQ, Web Design Questions, Digital Agency FAQ'
+				/>
+				<meta property='og:title' content='FAQs - Digital Haridwar' />
+				<meta
+					property='og:description'
+					content='Find answers to frequently asked questions about our digital marketing services.'
+				/>
+				<meta property='og:url' content='https://www.digitalharidwar.com/faqs' />
+				<link rel='canonical' href='https://www.digitalharidwar.com/faqs' />
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
