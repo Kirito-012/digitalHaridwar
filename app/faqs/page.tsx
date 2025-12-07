@@ -48,7 +48,9 @@ export default function FAQsPage() {
 	return (
 		<>
 			<Head>
-				<title>FAQs - Digital Marketing Questions Answered | Digital Haridwar</title>
+				<title>
+					FAQs - Digital Marketing Questions Answered | Digital Haridwar
+				</title>
 				<meta
 					name='description'
 					content='Find answers to frequently asked questions about our digital marketing services, SEO, social media marketing, web design, and more at Digital Haridwar.'
@@ -57,20 +59,29 @@ export default function FAQsPage() {
 					name='keywords'
 					content='Digital Marketing FAQs, SEO Questions, Social Media Marketing FAQ, Web Design Questions, Digital Agency FAQ'
 				/>
-				<meta property='og:title' content='FAQs - Digital Haridwar' />
+				<meta
+					property='og:title'
+					content='FAQs - Digital Haridwar'
+				/>
 				<meta
 					property='og:description'
 					content='Find answers to frequently asked questions about our digital marketing services.'
 				/>
-				<meta property='og:url' content='https://www.digitalharidwar.com/faqs' />
-				<link rel='canonical' href='https://www.digitalharidwar.com/faqs' />
+				<meta
+					property='og:url'
+					content='https://www.digitalharidwar.com/faqs'
+				/>
+				<link
+					rel='canonical'
+					href='https://www.digitalharidwar.com/faqs'
+				/>
 				<script
-					type="application/ld+json"
+					type='application/ld+json'
 					dangerouslySetInnerHTML={{
 						__html: JSON.stringify({
 							'@context': 'https://schema.org',
 							'@type': 'FAQPage',
-							mainEntity: faqs.map(faq => ({
+							mainEntity: faqs.map((faq) => ({
 								'@type': 'Question',
 								name: faq.question,
 								acceptedAnswer: {
@@ -81,7 +92,7 @@ export default function FAQsPage() {
 						}),
 					}}
 				/>
-			</head>
+			</Head>
 			<Navbar />
 			<div className='w-full min-h-screen mt-20 bg-white pb-24'>
 				{/* HERO SECTION */}
