@@ -5,6 +5,28 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import {motion} from 'framer-motion'
 import Image from 'next/image'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+	title: 'Digital Marketing Blogs & Insights - Digital Haridwar',
+	description: 'Read the latest blogs on digital marketing, SEO, social media marketing, and online business growth strategies from Digital Haridwar experts.',
+	keywords: [
+		'Digital Marketing Blogs',
+		'SEO Tips Haridwar',
+		'Social Media Marketing Insights',
+		'Content Marketing Articles',
+		'Digital Marketing Trends',
+		'Online Marketing Blog',
+	],
+	openGraph: {
+		title: 'Digital Marketing Blogs - Digital Haridwar',
+		description: 'Read the latest blogs on digital marketing, SEO, and online business growth strategies.',
+		url: 'https://www.digitalharidwar.com/blogs',
+	},
+	alternates: {
+		canonical: 'https://www.digitalharidwar.com/blogs',
+	},
+}
 
 const blogs = [
 	{
@@ -168,6 +190,39 @@ In the crowded digital landscape, quality content is your competitive advantage.
 export default function BlogsPage() {
 	return (
 		<div className='min-h-screen bg-white'>
+			<head>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'Blog',
+							name: 'Digital Haridwar Blog',
+							description: 'Digital marketing insights, SEO tips, and online business growth strategies',
+							url: 'https://www.digitalharidwar.com/blogs',
+							publisher: {
+								'@type': 'Organization',
+								name: 'Digital Haridwar',
+								logo: {
+									'@type': 'ImageObject',
+									url: 'https://www.digitalharidwar.com/logo.png',
+								},
+							},
+							blogPost: blogs.map(blog => ({
+								'@type': 'BlogPosting',
+								headline: blog.title,
+								description: blog.description,
+								datePublished: blog.date,
+								author: {
+									'@type': 'Organization',
+									name: 'Digital Haridwar',
+								},
+								url: `https://www.digitalharidwar.com/blogs/${blog.slug}`,
+							})),
+						}),
+					}}
+				/>
+			</head>
 			<Navbar />
 
 			{/* Hero Section */}

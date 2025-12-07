@@ -18,6 +18,33 @@ import {
 	Heart,
 	Sparkles,
 } from 'lucide-react'
+import {Metadata} from 'next'
+
+export const metadata: Metadata = {
+	title: 'Our Services - Digital Marketing, SEO, Web Design | Digital Haridwar',
+	description:
+		'Explore our comprehensive digital marketing services in Haridwar including SEO, social media marketing, PPC, web design, content marketing, and digital branding solutions.',
+	keywords: [
+		'Digital Marketing Services Haridwar',
+		'SEO Services Haridwar',
+		'Social Media Marketing Haridwar',
+		'Website Designing Haridwar',
+		'PPC Services Haridwar',
+		'Google Ads Company Haridwar',
+		'Content Marketing Haridwar',
+		'Web Development Haridwar',
+		'Digital Branding Haridwar',
+	],
+	openGraph: {
+		title: 'Our Services - Digital Haridwar',
+		description:
+			'Explore our comprehensive digital marketing services including SEO, social media marketing, PPC, and web design.',
+		url: 'https://www.digitalharidwar.com/services',
+	},
+	alternates: {
+		canonical: 'https://www.digitalharidwar.com/services',
+	},
+}
 
 const digitalServices = [
 	{
@@ -144,6 +171,69 @@ const eventServices = [
 export default function ServicesPage() {
 	return (
 		<div className='min-h-screen bg-white'>
+			<head>
+				<script
+					type='application/ld+json'
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'Service',
+							serviceType: 'Digital Marketing Services',
+							provider: {
+								'@type': 'Organization',
+								name: 'Digital Haridwar',
+								url: 'https://www.digitalharidwar.com',
+							},
+							areaServed: {
+								'@type': 'City',
+								name: 'Haridwar',
+							},
+							hasOfferCatalog: {
+								'@type': 'OfferCatalog',
+								name: 'Digital Marketing Services',
+								itemListElement: [
+									{
+										'@type': 'Offer',
+										itemOffered: {
+											'@type': 'Service',
+											name: 'SEO Services',
+											description:
+												'Search Engine Optimization services to improve website rankings',
+										},
+									},
+									{
+										'@type': 'Offer',
+										itemOffered: {
+											'@type': 'Service',
+											name: 'Social Media Marketing',
+											description:
+												'Comprehensive social media marketing and management',
+										},
+									},
+									{
+										'@type': 'Offer',
+										itemOffered: {
+											'@type': 'Service',
+											name: 'PPC Services',
+											description:
+												'Pay-per-click advertising and Google Ads management',
+										},
+									},
+									{
+										'@type': 'Offer',
+										itemOffered: {
+											'@type': 'Service',
+											name: 'Web Design & Development',
+											description:
+												'Professional website design and development services',
+										},
+									},
+								],
+							},
+						}),
+					}}
+				/>
+			</head>
 			<Navbar />
 			<section className='pt-40 pb-24 px-4 sm:px-6 lg:px-20 bg-linear-to-br from-blue-50 to-cyan-50'>
 				<div className='max-w-7xl mx-auto text-center'>

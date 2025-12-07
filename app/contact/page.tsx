@@ -4,6 +4,27 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import {motion} from 'framer-motion'
 import {Mail, Phone, MapPin, Send, Clock} from 'lucide-react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+	title: 'Contact Us - Get Free Digital Marketing Consultation | Digital Haridwar',
+	description: 'Contact Digital Haridwar for expert digital marketing services in Haridwar. Get a free consultation for SEO, social media marketing, web design, and more.',
+	keywords: [
+		'Contact Digital Agency Haridwar',
+		'Digital Marketing Consultation',
+		'SEO Services Contact',
+		'Digital Haridwar Contact',
+		'Free Marketing Consultation',
+	],
+	openGraph: {
+		title: 'Contact Us - Digital Haridwar',
+		description: 'Get in touch with Digital Haridwar for expert digital marketing services and free consultation.',
+		url: 'https://www.digitalharidwar.com/contact',
+	},
+	alternates: {
+		canonical: 'https://www.digitalharidwar.com/contact',
+	},
+}
 
 export default function ContactUsPage() {
 	const [formData, setFormData] = useState({

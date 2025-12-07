@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin pages
+Disallow: /adminuser/
+Disallow: /api/
+
+# Sitemaps
+Sitemap: https://www.digitalharidwar.com/sitemap.xml

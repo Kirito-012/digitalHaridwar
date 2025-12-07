@@ -5,6 +5,27 @@ import {ChevronDown} from 'lucide-react'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+	title: 'FAQs - Digital Marketing Questions Answered | Digital Haridwar',
+	description: 'Find answers to frequently asked questions about our digital marketing services, SEO, social media marketing, web design, and more at Digital Haridwar.',
+	keywords: [
+		'Digital Marketing FAQs',
+		'SEO Questions',
+		'Social Media Marketing FAQ',
+		'Web Design Questions',
+		'Digital Agency FAQ',
+	],
+	openGraph: {
+		title: 'FAQs - Digital Haridwar',
+		description: 'Find answers to frequently asked questions about our digital marketing services.',
+		url: 'https://www.digitalharidwar.com/faqs',
+	},
+	alternates: {
+		canonical: 'https://www.digitalharidwar.com/faqs',
+	},
+}
 
 const faqs = [
 	{
@@ -46,6 +67,25 @@ export default function FAQsPage() {
 
 	return (
 		<>
+			<head>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'FAQPage',
+							mainEntity: faqs.map(faq => ({
+								'@type': 'Question',
+								name: faq.question,
+								acceptedAnswer: {
+									'@type': 'Answer',
+									text: faq.answer,
+								},
+							})),
+						}),
+					}}
+				/>
+			</head>
 			<Navbar />
 			<div className='w-full min-h-screen mt-20 bg-white pb-24'>
 				{/* HERO SECTION */}

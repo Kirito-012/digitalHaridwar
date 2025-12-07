@@ -12,6 +12,27 @@ import {
 	Layers,
 	ShieldCheck,
 } from 'lucide-react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+	title: 'About Us - Digital Haridwar | Leading Digital Marketing Agency',
+	description: 'Learn about Digital Haridwar, your trusted digital marketing partner in Haridwar. We specialize in SEO, social media marketing, web design, and digital transformation services.',
+	keywords: [
+		'Digital Marketing Agency Haridwar',
+		'About Digital Haridwar',
+		'Digital Agency Team',
+		'Marketing Experts Haridwar',
+		'Professional Digital Services',
+	],
+	openGraph: {
+		title: 'About Us - Digital Haridwar',
+		description: 'Learn about Digital Haridwar, your trusted digital marketing partner in Haridwar.',
+		url: 'https://www.digitalharidwar.com/aboutus',
+	},
+	alternates: {
+		canonical: 'https://www.digitalharidwar.com/aboutus',
+	},
+}
 
 export default function AboutUsPage() {
 	return (

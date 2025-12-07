@@ -1,0 +1,2 @@
+-> add blogs slug
+-> in sitemap also, add SEO for slug
