@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 			'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services.',
 		images: [
 			{
-				url: 'https://www.digitalharidwar.com/og-image.jpg',
+				url: '/og-image.png',
 				width: 1200,
 				height: 630,
 				alt: 'Digital Haridwar - Digital Marketing Services',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
 		title: 'Digital Haridwar - Best Digital Marketing Agency in Haridwar',
 		description:
 			'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services.',
-		images: ['https://www.digitalharidwar.com/og-image.jpg'],
+		images: ['/og-image.png'],
 		creator: '@digitalharidwar',
 	},
 	viewport: {
