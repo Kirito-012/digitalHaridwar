@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 	title: 'Digital Haridwar - Best Digital Marketing Agency in Haridwar',
-	description: 'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services. Transform your business with expert digital solutions.',
+	description:
+		'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services. Transform your business with expert digital solutions.',
 	keywords: [
 		'Digital Marketing Agency in Haridwar',
 		'Haridwar Digital Marketing Services',
@@ -52,7 +53,8 @@ export const metadata: Metadata = {
 		url: 'https://www.digitalharidwar.com',
 		siteName: 'Digital Haridwar',
 		title: 'Digital Haridwar - Best Digital Marketing Agency in Haridwar',
-		description: 'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services.',
+		description:
+			'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services.',
 		images: [
 			{
 				url: 'https://www.digitalharidwar.com/og-image.jpg',
@@ -65,7 +67,8 @@ export const metadata: Metadata = {
 	twitter: {
 		card: 'summary_large_image',
 		title: 'Digital Haridwar - Best Digital Marketing Agency in Haridwar',
-		description: 'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services.',
+		description:
+			'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services.',
 		images: ['https://www.digitalharidwar.com/og-image.jpg'],
 		creator: '@digitalharidwar',
 	},
@@ -87,27 +90,41 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<head>
-				<link rel="icon" href="/favicon.ico" />
-				<meta name="theme-color" content="#2563eb" />
-				<meta name="google-site-verification" content="your-google-verification-code" />
-				<link rel="canonical" href="https://www.digitalharidwar.com" />
-				
+				<link
+					rel='icon'
+					href='/favicon.ico'
+				/>
+				<meta
+					name='theme-color'
+					content='#2563eb'
+				/>
+				<meta
+					name='google-site-verification'
+					content='google-site-verification=DmLXWylyIytnMn9gmq3oNHOJ1zCpQG_YD6Z0Y83RQpY'
+				/>
+				<link
+					rel='canonical'
+					href='https://www.digitalharidwar.com'
+				/>
+
 				{/* Google Analytics */}
-				<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+				<script
+					async
+					src='https://www.googletagmanager.com/gtag/js?id=G-9THFMF0LY7'></script>
 				<script
 					dangerouslySetInnerHTML={{
 						__html: `
 							window.dataLayer = window.dataLayer || [];
 							function gtag(){dataLayer.push(arguments);}
 							gtag('js', new Date());
-							gtag('config', 'G-XXXXXXXXXX');
+							gtag('config', 'G-9THFMF0LY7');
 						`,
 					}}
 				/>
-				
+
 				{/* Organization Schema */}
 				<script
-					type="application/ld+json"
+					type='application/ld+json'
 					dangerouslySetInnerHTML={{
 						__html: JSON.stringify({
 							'@context': 'https://schema.org',
@@ -115,10 +132,12 @@ export default function RootLayout({
 							name: 'Digital Haridwar',
 							url: 'https://www.digitalharidwar.com',
 							logo: 'https://www.digitalharidwar.com/logo.png',
-							description: 'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services.',
+							description:
+								'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services.',
 							address: {
 								'@type': 'PostalAddress',
-								streetAddress: '184, Subhash Nagar, Shankar Ashram, Alankar complex, Jwalapur',
+								streetAddress:
+									'184, Subhash Nagar, Shankar Ashram, Alankar complex, Jwalapur',
 								addressLocality: 'Haridwar',
 								addressRegion: 'Uttarakhand',
 								postalCode: '249407',
@@ -144,10 +163,10 @@ export default function RootLayout({
 						}),
 					}}
 				/>
-				
+
 				{/* Local Business Schema */}
 				<script
-					type="application/ld+json"
+					type='application/ld+json'
 					dangerouslySetInnerHTML={{
 						__html: JSON.stringify({
 							'@context': 'https://schema.org',
@@ -160,7 +179,8 @@ export default function RootLayout({
 							priceRange: '₹₹',
 							address: {
 								'@type': 'PostalAddress',
-								streetAddress: '184, Subhash Nagar, Shankar Ashram, Alankar complex, Jwalapur',
+								streetAddress:
+									'184, Subhash Nagar, Shankar Ashram, Alankar complex, Jwalapur',
 								addressLocality: 'Haridwar',
 								addressRegion: 'Uttarakhand',
 								postalCode: '249407',
@@ -173,7 +193,14 @@ export default function RootLayout({
 							},
 							openingHoursSpecification: {
 								'@type': 'OpeningHoursSpecification',
-								dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+								dayOfWeek: [
+									'Monday',
+									'Tuesday',
+									'Wednesday',
+									'Thursday',
+									'Friday',
+									'Saturday',
+								],
 								opens: '09:00',
 								closes: '18:00',
 							},
