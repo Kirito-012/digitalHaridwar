@@ -14,6 +14,8 @@ export default function ContactUsPage() {
 		subject: '',
 		message: '',
 	})
+	const [loading, setLoading] = useState(false)
+	const [submitMessage, setSubmitMessage] = useState('')
 
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -24,23 +26,56 @@ export default function ContactUsPage() {
 		})
 	}
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
-		console.log('Form submitted:', formData)
-		alert('Thank you for your message! We will get back to you soon.')
-		setFormData({
-			name: '',
-			email: '',
-			phone: '',
-			subject: '',
-			message: '',
-		})
+		
+		// Validate all required fields are filled
+		if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
+			setSubmitMessage('Please fill in all required fields before submitting.')
+			return
+		}
+		
+		setLoading(true)
+		setSubmitMessage('')
+		
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {'Content-Type': 'application/json'},
+				body: JSON.stringify({
+					name: formData.name,
+					number: formData.phone || 'Not provided',
+					email: formData.email,
+					message: `Subject: ${formData.subject}\n\n${formData.message}`,
+				}),
+			})
+			
+			if (response.ok) {
+				setSubmitMessage('Thank you! Your message has been sent successfully. Check your email for confirmation.')
+				setFormData({
+					name: '',
+					email: '',
+					phone: '',
+					subject: '',
+					message: '',
+				})
+			} else {
+				setSubmitMessage('Sorry, something went wrong. Please try again.')
+			}
+		} catch (error) {
+			setSubmitMessage('Sorry, something went wrong. Please try again.')
+		} finally {
+			setLoading(false)
+		}
 	}
 
 	return (
 		<div className='min-h-screen bg-white'>
 			<Head>
-				<title>Contact Us - Get Free Digital Marketing Consultation | Digital Haridwar</title>
+				<title>
+					Contact Us - Get Free Digital Marketing Consultation | Digital
+					Haridwar
+				</title>
 				<meta
 					name='description'
 					content='Contact Digital Haridwar for expert digital marketing services in Haridwar. Get a free consultation for SEO, social media marketing, web design, and more.'
@@ -49,13 +84,22 @@ export default function ContactUsPage() {
 					name='keywords'
 					content='Contact Digital Agency Haridwar, Digital Marketing Consultation, SEO Services Contact, Digital Haridwar Contact, Free Marketing Consultation'
 				/>
-				<meta property='og:title' content='Contact Us - Digital Haridwar' />
+				<meta
+					property='og:title'
+					content='Contact Us - Digital Haridwar'
+				/>
 				<meta
 					property='og:description'
 					content='Get in touch with Digital Haridwar for expert digital marketing services and free consultation.'
 				/>
-				<meta property='og:url' content='https://www.digitalharidwar.com/contact' />
-				<link rel='canonical' href='https://www.digitalharidwar.com/contact' />
+				<meta
+					property='og:url'
+					content='https://www.digitalharidwar.com/contact'
+				/>
+				<link
+					rel='canonical'
+					href='https://www.digitalharidwar.com/contact'
+				/>
 			</Head>
 			<Navbar />
 
@@ -174,6 +218,18 @@ export default function ContactUsPage() {
 								<h3 className='text-2xl font-bold text-slate-900 mb-6'>
 									Send Us a Message
 								</h3>
+								
+								{submitMessage && (
+									<div
+										className={`mb-6 p-4 rounded-lg text-center text-sm font-medium ${
+											submitMessage.includes('Thank you')
+												? 'bg-green-100 text-green-800 border border-green-200'
+												: 'bg-red-100 text-red-800 border border-red-200'
+										}`}>
+										{submitMessage}
+									</div>
+								)}
+								
 								<form
 									onSubmit={handleSubmit}
 									className='space-y-6'>
@@ -270,9 +326,10 @@ export default function ContactUsPage() {
 
 									<button
 										type='submit'
-										className='w-full bg-linear-to-r from-blue-600 to-cyan-500 text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 group'>
-										<span>Send Message</span>
-										<Send className='w-5 h-5 group-hover:translate-x-1 transition-transform' />
+										disabled={loading}
+										className='w-full bg-linear-to-r from-blue-600 to-cyan-500 text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 group disabled:opacity-50 disabled:cursor-not-allowed'>
+										<span>{loading ? 'Sending...' : 'Send Message'}</span>
+										{!loading && <Send className='w-5 h-5 group-hover:translate-x-1 transition-transform' />}
 									</button>
 								</form>
 							</div>

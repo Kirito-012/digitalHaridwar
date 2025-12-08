@@ -31,6 +31,13 @@ const Hero = () => {
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
+		
+		// Validate all fields are filled
+		if (!formData.name.trim() || !formData.number.trim() || !formData.email.trim() || !formData.message.trim()) {
+			setSubmitMessage('Please fill in all fields before submitting.')
+			return
+		}
+		
 		setLoading(true)
 		setSubmitMessage('')
 		try {
@@ -40,7 +47,7 @@ const Hero = () => {
 				body: JSON.stringify(formData),
 			})
 			if (response.ok) {
-				setSubmitMessage('Thank you! Your message has been sent successfully.')
+				setSubmitMessage('Thank you! Your message has been sent successfully. Check your email for confirmation.')
 				setFormData({name: '', number: '', email: '', message: ''})
 			} else {
 				setSubmitMessage('Sorry, something went wrong. Please try again.')
