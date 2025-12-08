@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://www.digitalharidwar.com'),
 	title: 'Digital Haridwar - Best Digital Marketing Agency in Haridwar',
 	description:
 		'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services. Transform your business with expert digital solutions.',
@@ -72,14 +73,15 @@ export const metadata: Metadata = {
 		images: ['/og-image.png'],
 		creator: '@digitalharidwar',
 	},
-	viewport: {
-		width: 'device-width',
-		initialScale: 1,
-		maximumScale: 5,
-	},
 	alternates: {
 		canonical: 'https://www.digitalharidwar.com',
 	},
+}
+
+export const viewport = {
+	width: 'device-width',
+	initialScale: 1,
+	maximumScale: 5,
 }
 
 export default function RootLayout({
@@ -145,7 +147,7 @@ export default function RootLayout({
 							},
 							contactPoint: {
 								'@type': 'ContactPoint',
-								telephone: '+91-98765-43210',
+								telephone: '+91-82189-11085',
 								contactType: 'Customer Service',
 								areaServed: 'IN',
 								availableLanguage: ['English', 'Hindi'],
@@ -175,7 +177,7 @@ export default function RootLayout({
 							image: 'https://www.digitalharidwar.com/logo.png',
 							'@id': 'https://www.digitalharidwar.com',
 							url: 'https://www.digitalharidwar.com',
-							telephone: '+91-98765-43210',
+							telephone: '+91-82189-11085',
 							priceRange: '₹₹',
 							address: {
 								'@type': 'PostalAddress',

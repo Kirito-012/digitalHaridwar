@@ -129,16 +129,16 @@ export default function Footer() {
 								size={18}
 								className='text-blue-400'
 							/>{' '}
-							+91 98765 43210
+							+91 82189 11085
 						</li>
 						<li className='flex items-center gap-2'>
 							<Mail
 								size={18}
 								className='text-blue-400'
 							/>{' '}
-							connect@digitalharidwar.com
+							yogeshggangwar@gmail.com
 						</li>
-						<li>Haridwar, Uttarakhand, India</li>
+						<li>Y4U Ultimate Training Center, 184, Subhash Nagar, Shankar Ashram, Alankar complex, Jwalapur, Haridwar, Uttarakhand - 249407</li>
 					</ul>
 				</div>
 			</div>

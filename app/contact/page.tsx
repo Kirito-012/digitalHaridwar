@@ -28,16 +28,21 @@ export default function ContactUsPage() {
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
-		
+
 		// Validate all required fields are filled
-		if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
+		if (
+			!formData.name.trim() ||
+			!formData.email.trim() ||
+			!formData.subject.trim() ||
+			!formData.message.trim()
+		) {
 			setSubmitMessage('Please fill in all required fields before submitting.')
 			return
 		}
-		
+
 		setLoading(true)
 		setSubmitMessage('')
-		
+
 		try {
 			const response = await fetch('/api/contact', {
 				method: 'POST',
@@ -49,9 +54,11 @@ export default function ContactUsPage() {
 					message: `Subject: ${formData.subject}\n\n${formData.message}`,
 				}),
 			})
-			
+
 			if (response.ok) {
-				setSubmitMessage('Thank you! Your message has been sent successfully. Check your email for confirmation.')
+				setSubmitMessage(
+					'Thank you! Your message has been sent successfully. Check your email for confirmation.'
+				)
 				setFormData({
 					name: '',
 					email: '',
@@ -147,13 +154,10 @@ export default function ContactUsPage() {
 										<Mail className='w-6 h-6' />
 									</div>
 									<div>
-										<h3 className='text-lg font-semibold text-slate-900 mb-1'>
-											Email Us
-										</h3>
-										<p className='text-slate-600'>info@digitalharidwar.com</p>
-										<p className='text-slate-600'>
-											support@digitalharidwar.com
-										</p>
+									<h3 className='text-lg font-semibold text-slate-900 mb-1'>
+										Email Us
+									</h3>
+									<p className='text-slate-600'>yogeshggangwar@gmail.com</p>
 									</div>
 								</div>
 
@@ -162,11 +166,10 @@ export default function ContactUsPage() {
 										<Phone className='w-6 h-6' />
 									</div>
 									<div>
-										<h3 className='text-lg font-semibold text-slate-900 mb-1'>
-											Call Us
-										</h3>
-										<p className='text-slate-600'>+91 98765 43210</p>
-										<p className='text-slate-600'>+91 98765 43211</p>
+									<h3 className='text-lg font-semibold text-slate-900 mb-1'>
+										Call Us
+									</h3>
+									<p className='text-slate-600'>+91 82189 11085</p>
 									</div>
 								</div>
 
@@ -175,16 +178,16 @@ export default function ContactUsPage() {
 										<MapPin className='w-6 h-6' />
 									</div>
 									<div>
-										<h3 className='text-lg font-semibold text-slate-900 mb-1'>
-											Visit Us
-										</h3>
-										<p className='text-slate-600'>
-											123 Digital Street
-											<br />
-											Tech City, TC 12345
-											<br />
-											India
-										</p>
+									<h3 className='text-lg font-semibold text-slate-900 mb-1'>
+										Visit Us
+									</h3>
+									<p className='text-slate-600'>
+										Y4U Ultimate Training Center
+										<br />
+										184, Subhash Nagar, Shankar Ashram, Alankar complex
+										<br />
+										Jwalapur, Haridwar, Uttarakhand - 249407
+									</p>
 									</div>
 								</div>
 
@@ -218,7 +221,7 @@ export default function ContactUsPage() {
 								<h3 className='text-2xl font-bold text-slate-900 mb-6'>
 									Send Us a Message
 								</h3>
-								
+
 								{submitMessage && (
 									<div
 										className={`mb-6 p-4 rounded-lg text-center text-sm font-medium ${
@@ -229,7 +232,7 @@ export default function ContactUsPage() {
 										{submitMessage}
 									</div>
 								)}
-								
+
 								<form
 									onSubmit={handleSubmit}
 									className='space-y-6'>
@@ -277,15 +280,15 @@ export default function ContactUsPage() {
 												className='block text-sm font-medium text-slate-700 mb-2'>
 												Phone Number
 											</label>
-											<input
-												type='tel'
-												id='phone'
-												name='phone'
-												value={formData.phone}
-												onChange={handleChange}
-												className='w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors'
-												placeholder='+91 98765 43210'
-											/>
+										<input
+											type='tel'
+											id='phone'
+											name='phone'
+											value={formData.phone}
+											onChange={handleChange}
+											className='w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors'
+											placeholder='+91 82189 11085'
+										/>
 										</div>
 										<div>
 											<label
@@ -329,7 +332,9 @@ export default function ContactUsPage() {
 										disabled={loading}
 										className='w-full bg-linear-to-r from-blue-600 to-cyan-500 text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 group disabled:opacity-50 disabled:cursor-not-allowed'>
 										<span>{loading ? 'Sending...' : 'Send Message'}</span>
-										{!loading && <Send className='w-5 h-5 group-hover:translate-x-1 transition-transform' />}
+										{!loading && (
+											<Send className='w-5 h-5 group-hover:translate-x-1 transition-transform' />
+										)}
 									</button>
 								</form>
 							</div>

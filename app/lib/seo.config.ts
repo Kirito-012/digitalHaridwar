@@ -1,9 +1,10 @@
 // SEO Configuration for Digital Haridwar
 export const siteConfig = {
     name: 'Digital Haridwar',
-    description: 'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services.',
+    description:
+        'Leading digital marketing agency in Haridwar offering SEO, social media marketing, PPC, web design, and digital branding services.',
     url: 'https://www.digitalharidwar.com',
-    ogImage: 'https://www.digitalharidwar.com/og-image.jpg',
+    ogImage: 'https://www.digitalharidwar.com/og-image.png',
     links: {
         facebook: 'https://www.facebook.com/digitalharidwar',
         instagram: 'https://www.instagram.com/digitalharidwar',
@@ -53,7 +54,8 @@ export const structuredData = {
         description: siteConfig.description,
         address: {
             '@type': 'PostalAddress',
-            streetAddress: '184, Subhash Nagar, Shankar Ashram, Alankar complex, Jwalapur',
+            streetAddress:
+                '184, Subhash Nagar, Shankar Ashram, Alankar complex, Jwalapur',
             addressLocality: 'Haridwar',
             addressRegion: 'Uttarakhand',
             postalCode: '249407',
@@ -61,9 +63,9 @@ export const structuredData = {
         },
         contactPoint: {
             '@type': 'ContactPoint',
-            telephone: '+91-98765-43210',
+            telephone: '+91-82189-11085',
             contactType: 'Customer Service',
-            email: 'connect@digitalharidwar.com',
+            email: 'yogeshggangwar@gmail.com',
             areaServed: 'IN',
             availableLanguage: ['English', 'Hindi'],
         },
@@ -87,11 +89,12 @@ export const structuredData = {
         image: 'https://www.digitalharidwar.com/logo.png',
         '@id': 'https://www.digitalharidwar.com',
         url: 'https://www.digitalharidwar.com',
-        telephone: '+91-98765-43210',
+        telephone: '+91-82189-11085',
         priceRange: '₹₹',
         address: {
             '@type': 'PostalAddress',
-            streetAddress: '184, Subhash Nagar, Shankar Ashram, Alankar complex, Jwalapur',
+            streetAddress:
+                '184, Subhash Nagar, Shankar Ashram, Alankar complex, Jwalapur',
             addressLocality: 'Haridwar',
             addressRegion: 'Uttarakhand',
             postalCode: '249407',
@@ -104,7 +107,14 @@ export const structuredData = {
         },
         openingHoursSpecification: {
             '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            dayOfWeek: [
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday',
+            ],
             opens: '09:00',
             closes: '18:00',
         },
